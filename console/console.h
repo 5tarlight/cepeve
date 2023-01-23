@@ -25,10 +25,15 @@
 #define BG_WHITE "\e[47m"
 #define RESET "\e(B\e[m"
 
+// char *operator+(const char *str1, const char *str2);
+
 void printhello();
+void print(char *str);
 void print(const char *str);
 void print(const char *str, const char *o);
 void print(const char *str, const char *o1, const char *o2);
+void println(char *str);
 void println(const char *str);
 void println(const char *str, const char *o);
 void println(const char *str, const char *o1, const char *o2);
+void clear(bool wait = false);

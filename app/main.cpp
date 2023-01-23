@@ -1,4 +1,7 @@
 #include "console.h"
 #include <iostream>
 
-int main() { printhello(); }
+int main() {
+  clear(true);
+  printhello();
+}
