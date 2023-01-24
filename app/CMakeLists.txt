@@ -7,4 +7,5 @@ file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
 
 add_executable(cepeve ${SRC_FILES})
 target_link_libraries(cepeve console)
+target_link_libraries(cepeve player)
 # target_link_libraries(program PRIVATE Threads::Threads)

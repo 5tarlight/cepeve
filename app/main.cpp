@@ -8,5 +8,13 @@ int main() {
 
   int input = select(concat_str(YELLOW, "What to do next?"),
                      {"Select Profile", "New Profile", "Delete Profile"});
-  println(std::to_string(input));
+
+  switch (input) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+  }
 }
