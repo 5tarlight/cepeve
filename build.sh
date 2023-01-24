@@ -6,3 +6,5 @@ time {
   cmake ..
   make
 }
+
+cd ..
