@@ -47,3 +47,7 @@ std::string concat_str(std::string a, std::string b);
 
 bool parse_int(std::string &input, int &output);
 unsigned int select(std::string title, std::vector<std::string> questions);
+unsigned int select(std::string title, std::vector<std::string> questions,
+                    bool highlight);
+std::string readline(const char *question);
+std::string readline(std::string question);

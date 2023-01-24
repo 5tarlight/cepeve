@@ -7,7 +7,7 @@ int main() {
   println();
 
   int input = select(concat_str(YELLOW, "What to do next?"),
-                     {"Select Profile", "New Profile", "Delete Profile"});
+                     {"Select Profile", "New Profile", "Delete Profile"}, true);
 
   switch (input) {
   case 1:

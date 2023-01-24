@@ -39,3 +39,39 @@ unsigned int select(string title, vector<string> questions) {
 
   return output;
 }
+
+unsigned int select(string title, vector<string> questions, bool highlight) {
+  println(title);
+  for (int i = 0; i < questions.size(); i++) {
+    string str = std::to_string(i + 1) + ". " + questions[i];
+    println(str);
+  }
+
+  string input;
+  int output = -1;
+
+  do {
+    print("> ", GREEN);
+    getline(std::cin, input);
+  } while (!parse_int(input, output) ||
+           !(output > 0 && output <= questions.size()));
+
+  if (highlight) {
+    clear();
+
+    println(title);
+    for (int i = 0; i < questions.size(); i++) {
+      string str = std::to_string(i + 1) + ". " + questions[i];
+      if (i + 1 == output)
+        println(HIGHLIGHT + str);
+      else
+        println(str);
+    }
+  }
+
+  return output;
+}
+
+std::string readline(const char *question) { return ""; }
+
+std::string readline(std::string question) { return ""; }
