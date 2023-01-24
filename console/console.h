@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include <vector>
 
 // https://wiki.archlinux.org/title/Bash/Prompt_customization#Colors
 #define BOLD "\e[1m"
@@ -28,12 +30,19 @@
 // char *operator+(const char *str1, const char *str2);
 
 void printhello();
+void print(std::string str);
 void print(char *str);
 void print(const char *str);
 void print(const char *str, const char *o);
 void print(const char *str, const char *o1, const char *o2);
+void println();
+void println(std::string str);
 void println(char *str);
 void println(const char *str);
 void println(const char *str, const char *o);
 void println(const char *str, const char *o1, const char *o2);
 void clear(bool wait = false);
+
+std::string concat_str(std::string a, std::string b);
+
+unsigned int select(std::string title, std::vector<std::string> questions);

@@ -2,6 +2,10 @@
 #include <iostream>
 
 int main() {
-  clear(true);
+  clear();
   printhello();
+  println();
+
+  select("What to do next?",
+         {"Select Account", "New Profile", "Delete Account"});
 }
