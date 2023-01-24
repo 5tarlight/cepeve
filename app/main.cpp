@@ -6,6 +6,7 @@ int main() {
   printhello();
   println();
 
-  select("What to do next?",
-         {"Select Account", "New Profile", "Delete Account"});
+  int input = select(concat_str(YELLOW, "What to do next?"),
+                     {"Select Profile", "New Profile", "Delete Profile"});
+  println(std::to_string(input));
 }

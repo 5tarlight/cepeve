@@ -45,4 +45,5 @@ void clear(bool wait = false);
 
 std::string concat_str(std::string a, std::string b);
 
+bool parse_int(std::string &input, int &output);
 unsigned int select(std::string title, std::vector<std::string> questions);
