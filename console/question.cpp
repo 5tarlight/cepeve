@@ -72,6 +72,20 @@ unsigned int select(string title, vector<string> questions, bool highlight) {
   return output;
 }
 
-std::string readline(const char *question) { return ""; }
+std::string readline(const char *question) {
+  println(question);
+  string input;
+  print("> ", GREEN);
+  getline(std::cin, input);
 
-std::string readline(std::string question) { return ""; }
+  return input;
+}
+
+std::string readline(std::string question) {
+  println(question);
+  string input;
+  print("> ", GREEN);
+  getline(std::cin, input);
+
+  return input;
+}
