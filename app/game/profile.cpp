@@ -35,10 +35,12 @@ Player profile::new_profile() {
   println();
   println(std::string("Which ") + YELLOW + "corporation" + RESET +
           " you will dedicate?");
+  // println("12345678901234567890123456789012345678901234567890123456789012345678"
+  //         "901234567890");
   unsigned int born = select(
       std::string(DIM) +
-          "The things you do is ultimately depends on your choice. Choosing "
-          "corporation will only affect your initial locaiton. You can't "
+          "What you do is ultimately depends on your choice. Choosing "
+          "corporation will only affect your initial location. You can't "
           "change "
           "your background but, you can change your standing regardless of "
           "your "
