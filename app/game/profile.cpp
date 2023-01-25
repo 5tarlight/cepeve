@@ -6,7 +6,7 @@
 
 Player profile::new_profile() {
   println();
-  print("Hello. I'm your advisor and cpatain ");
+  print("Hello. I'm your advisor and captain ");
   print("YEAHx4", GREEN);
   println(".");
   std::this_thread::sleep_for(std::chrono::milliseconds(700));
@@ -21,11 +21,11 @@ Player profile::new_profile() {
   std::this_thread::sleep_for(std::chrono::milliseconds(700));
   println();
 
-  std::string name =
-      readline(concat_str("Let me know your ", YELLOW) + "name" + RESET + ".");
+  std::string name = readline(std::string("Let me know your ") + YELLOW +
+                              "name" + RESET + ".");
   println();
   unsigned int gender =
-      select(concat_str("Let me know ", YELLOW) + "who you are" + RESET + ".",
+      select(std::string("Let me know ") + YELLOW + "who you are" + RESET + ".",
              {"man", "woman"});
   bool male = false;
 
@@ -33,17 +33,16 @@ Player profile::new_profile() {
     male = true;
 
   println();
-  println(concat_str("Which ", YELLOW) + "corporation" + RESET +
+  println(std::string("Which ") + YELLOW + "corporation" + RESET +
           " you will dedicate?");
   unsigned int born = select(
-      concat_str(
-          DIM,
-          "The things you do is ultimately depends on your choice.\nChoosing "
-          "corporation will only affect your initial locaiton.\nYou can't "
+      std::string(DIM) +
+          "The things you do is ultimately depends on your choice. Choosing "
+          "corporation will only affect your initial locaiton. You can't "
           "change "
           "your background but, you can change your standing regardless of "
           "your "
-          "background\nand you can join any corporation that wants you."),
+          "backgroundand you can join any corporation that wants you.",
       {"Caldari (Jita, Moon VII Caldari Navy)",
        "Minmatar (Kekebaba, Minmatar Empire Army)",
        "Amarr (Amarr Newbie School)",

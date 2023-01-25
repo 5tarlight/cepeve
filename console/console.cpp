@@ -3,22 +3,46 @@
 #include <iostream>
 #include <stdlib.h>
 
-void print(std::string str) { std::cout << str << RESET; }
-void print(char *str) { std::cout << str; }
-void print(const char *str) { std::cout << str; }
-void print(const char *str, const char *o) { std::cout << o << str << RESET; }
+void pretty_str(std::string &str) {
+  int inserted = 0;
+  // int index = 80 * (inserted + 1) + inserted;
+  int index = 80;
+
+  while (str.size() > index) {
+    str.insert(index, 1, '\n');
+
+    if (str[index + 1] == ' ') {
+      str.erase(index + 1, 1);
+    }
+
+    inserted++;
+    // index = 80 * (inserted + 1) + inserted;
+    index += 81;
+  }
+}
+
+void print(std::string str) {
+  std::string c(str);
+  pretty_str(c);
+  std::cout << c << RESET;
+}
+void print(char *str) { print(std::string(str)); }
+void print(const char *str) { print(std::string(str)); }
+void print(const char *str, const char *o) { print(std::string(o) + str); }
 void print(const char *str, const char *o1, const char *o2) {
-  std::cout << o1 << o2 << str << RESET;
+  print(std::string(o1) + o2 + str);
 }
 void println() { std::cout << std::endl; }
-void println(std::string str) { std::cout << str << RESET << std::endl; }
-void println(char *str) { std::cout << str << std::endl; }
-void println(const char *str) { std::cout << str << std::endl; }
-void println(const char *str, const char *o) {
-  std::cout << o << str << RESET << std::endl;
+void println(std::string str) {
+  std::string c(str);
+  pretty_str(c);
+  std::cout << c << RESET << std::endl;
 }
+void println(char *str) { println(std::string(str)); }
+void println(const char *str) { println(std::string(str)); }
+void println(const char *str, const char *o) { println(std::string(o) + str); }
 void println(const char *str, const char *o1, const char *o2) {
-  std::cout << o1 << o2 << str << RESET << std::endl;
+  println(std::string(o1) + o1 + str);
 }
 
 void clear(bool wait) {

@@ -29,6 +29,8 @@
 
 // char *operator+(const char *str1, const char *str2);
 
+void pretty_str(std::string &str);
+
 void printhello();
 void print(std::string str);
 void print(char *str);
@@ -43,7 +45,8 @@ void println(const char *str, const char *o);
 void println(const char *str, const char *o1, const char *o2);
 void clear(bool wait = false);
 
-std::string concat_str(std::string a, std::string b);
+[[deprecated("Use std::string(...) + <text> instead")]] std::string
+concat_str(std::string a, std::string b);
 
 bool parse_int(std::string &input, int &output);
 unsigned int select(std::string title, std::vector<std::string> questions);
