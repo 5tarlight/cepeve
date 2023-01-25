@@ -1,6 +1,7 @@
 #include "console.h"
 #include "game/profile.h"
 #include <iostream>
+#include <string>
 
 int main() {
   clear();
@@ -9,7 +10,7 @@ int main() {
 
   while (true) {
     int input = select(
-        concat_str(YELLOW, "What to do next?"),
+        std::string(YELLOW) + "What to do next?",
         {"Select Profile", "New Profile", "Delete Profile", "Quit"}, true);
 
     switch (input) {

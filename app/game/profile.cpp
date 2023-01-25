@@ -1,5 +1,6 @@
 #include "profile.h"
 #include "console.h"
+#include "player.h"
 #include <chrono>
 #include <string>
 #include <thread>
@@ -67,5 +68,9 @@ Player profile::new_profile() {
     break;
   }
 
-  return Player(name, male, corp);
+  auto p = Player(name, male, corp);
+
+  Player::save_player(p);
+
+  return p;
 }
