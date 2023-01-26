@@ -22,5 +22,5 @@ public:
 
   void static save_player(Player &p);
   // void static load_player(std::string name);
-  // std::vector<std::string> static load_names();
+  std::vector<std::string> static load_names();
 };

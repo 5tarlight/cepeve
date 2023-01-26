@@ -15,6 +15,7 @@ int main() {
 
     switch (input) {
     case 1:
+      profile::load_profile();
       break;
     case 2:
       profile::new_profile();

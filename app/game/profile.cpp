@@ -74,3 +74,5 @@ Player profile::new_profile() {
 
   return p;
 }
+
+Player profile::load_profile() { return Player("", true, ""); }

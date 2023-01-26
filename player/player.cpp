@@ -39,3 +39,12 @@ void Player::save_player(Player &p) {
   file_obj.write((char *)&p, sizeof(p));
   file_obj.close();
 }
+
+std::vector<string> Player::load_names() {
+  mkdirs();
+
+  std::vector<string> names;
+  for (auto entry : fs::directory_iterator(Player::profile_path)) {
+    names.push_back(entry.path().filename().string());
+  }
+}
